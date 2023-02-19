@@ -2,7 +2,7 @@
 import Navbar from './Navbar';
 import Image from 'next/image';
 import { Inter } from '@next/font/google';
-import { useEffect, useState } from 'react';
+import { SetStateAction, useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { 
@@ -48,12 +48,15 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
     alignItems: 'flex-end',
     },
+  
+  
 }));
 
 const Home = () => {
   const classes = useStyles();
   const router = useRouter();
-  
+  const [searchTerm, setSearchTerm] = useState('');
+  const [selectedTrain, setSelectedTrain] = useState('');
 
   const [data, setData] = useState<ServerData[]>([]);
   useEffect(() => {
@@ -69,6 +72,7 @@ const Home = () => {
     const selectedId = event.target.value;
     router.push(`/${selectedId}`);
   };
+
 
   return (
     
