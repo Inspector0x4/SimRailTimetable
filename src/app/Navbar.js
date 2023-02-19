@@ -4,7 +4,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import { useState, useEffect } from 'react';
-
+import Image from 'next/image'
 const Navbar = () => {
   const [currentTime, setCurrentTime] = useState(null);
 
@@ -29,7 +29,7 @@ const Navbar = () => {
       <Toolbar style={{ backgroundColor: '#1e272e' }}>
         <div style={{ flex: 1 }}>
           <Link href="/">
-            <img src='./logo_64.png' width='48' height='48' />
+          <Image src='/logo_64.png' width='48' height='48' />
           </Link>
         </div>
         <div style={{  flex:1 ,}}>
