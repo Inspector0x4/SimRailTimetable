@@ -101,7 +101,7 @@ const Server = () => {
 
   const redirectToMenu = (event) => {
     const { server } = router.query;
-    router.push(`/${server}`);
+    router.push(`/`);
     
   }
 
