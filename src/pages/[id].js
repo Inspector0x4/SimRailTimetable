@@ -7,7 +7,8 @@ import {
   InputLabel,
   MenuItem,
   Select,
-  Typography
+  Typography,
+  Paper
 } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -26,6 +27,15 @@ const useStyles = makeStyles((theme) => ({
   title: {
     marginBottom: theme.spacing(4),
   },
+  footer: {
+    marginTop: theme.spacing(2),
+    padding: theme.spacing(2),
+    backgroundColor: theme.palette.secondary.main,
+    color: theme.palette.secondary.contrastText,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'flex-end',
+    },
 }));
 
 const Server = () => {

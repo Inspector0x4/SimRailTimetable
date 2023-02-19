@@ -9,9 +9,22 @@ import { Grid,Button, Table, TableBody, TableCell, TableContainer, TableHead, Ta
 import Head from 'next/head'
 import React, {  useEffect } from "react";
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
+
+const useStyles = makeStyles((theme) => ({
+
+  footer: {
+    marginTop: theme.spacing(2),
+    padding: theme.spacing(2),
+    backgroundColor: theme.palette.secondary.main,
+    color: theme.palette.secondary.contrastText,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'flex-end',
+    }
+}));
 const Server = () => {
   const router = useRouter();
-
+  const classes = useStyles();
   const [isLoaded, setIsLoaded] = useState(false);
   const [data, setData] = useState([]);
   const { id } = router.query;
