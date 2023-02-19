@@ -169,7 +169,7 @@ const Server = () => {
           </Grid>
           <Grid container spacing={1} justifyContent="center" alignItems="center">
             <Grid item xs={8}>
-              <TableContainer component={Paper}>
+              <TableContainer component={Paper} style={{ maxHeight: '650px' }}>
                 <Table stickyHeader>
                   <TableHead>
                     <TableRow>
