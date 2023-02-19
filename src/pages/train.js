@@ -3,7 +3,7 @@ import { useState } from "react"
 
 import pdfMake from 'pdfmake/build/pdfmake';
 import pdfFonts from 'pdfmake/build/vfs_fonts';
-import { Grid,Button, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, makeStyles} from '@material-ui/core';
+import { Grid,Button, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, makeStyles,Typography} from '@material-ui/core';
 
 
 import Head from 'next/head'
