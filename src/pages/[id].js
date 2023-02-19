@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
 import Head from 'next/head';
+import Navbar from '../app/Navbar';
 import {
   CircularProgress,
   FormControl,
@@ -18,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     justifyContent: 'top',
     minHeight: '100vh',
-    padding: theme.spacing(2),
+    padding: theme.spacing(20),
     flexDirection: 'column',
   },
   select: {
@@ -79,6 +80,11 @@ const Server = () => {
   }
 
   return (
+    <><div> <Navbar /></div>
+    
+    
+    
+   
     <div className={classes.root}>
       <Head>
         <title>SimRail Information</title>
@@ -102,11 +108,11 @@ const Server = () => {
         </Select>
       </FormControl>
       <Paper className={classes.footer}>
-<Typography variant="body2">
-Thanks to the SimRail devs and DeadlyKungFu.Ninja#8294 for their API !
-</Typography>
-</Paper>
-    </div>
+        <Typography variant="body2">
+        Thanks to the SimRail devs and SimRail France for their API !
+        </Typography>
+      </Paper>
+    </div></>
   );
 };
 

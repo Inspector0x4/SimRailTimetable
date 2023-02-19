@@ -20,6 +20,7 @@
     "csvtojson": "^2.0.10",
     "eslint": "8.34.0",
     "eslint-config-next": "13.1.6",
+    "flowbite-react": "^0.3.8",
     "next": "13.1.6",
     "notiflix": "^3.2.6",
     "pdfmake": "^0.2.7",
