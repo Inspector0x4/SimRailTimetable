@@ -90,7 +90,7 @@ const Home = () => {
       </FormControl>
       <Paper className={classes.footer}>
 <Typography variant="body2">
-Thanks to the SimRail devs for their api
+Thanks to the SimRail devs and DeadlyKungFu.Ninja#8294 for their API !
 </Typography>
 </Paper>
     </div>
