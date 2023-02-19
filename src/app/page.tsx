@@ -9,7 +9,8 @@ import {
   InputLabel, 
   MenuItem, 
   Select, 
-  Typography 
+  Typography ,
+  Paper
 } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 interface ServerData {
@@ -34,6 +35,15 @@ const useStyles = makeStyles((theme) => ({
   title: {
     marginBottom: theme.spacing(2),
   },
+  footer: {
+    marginTop: theme.spacing(2),
+    padding: theme.spacing(2),
+    backgroundColor: theme.palette.secondary.main,
+    color: theme.palette.secondary.contrastText,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'flex-end',
+    },
 }));
 
 const Home = () => {
@@ -78,6 +88,11 @@ const Home = () => {
             ))}
         </Select>
       </FormControl>
+      <Paper className={classes.footer}>
+<Typography variant="body2">
+Thanks to the SimRail devs for their api
+</Typography>
+</Paper>
     </div>
   );
 };
