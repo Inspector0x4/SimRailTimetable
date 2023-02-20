@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Navbar from '../app/Navbar';
 import DiscordLogo from "../app/DiscordLogo";
+import { Analytics } from '@vercel/analytics/react';
 import {
   CircularProgress,
   FormControl,
@@ -185,6 +186,7 @@ const Server = () => {
         </Typography>
       </Paper>
       <DiscordLogo />
+      <Analytics />
     </div></>
   );
 };

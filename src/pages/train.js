@@ -7,6 +7,7 @@ import { Grid,Button, Table, TableBody, TableCell, TableContainer, TableHead, Ta
 import DiscordLogo from "../app/DiscordLogo";
 import Head from 'next/head'
 import React, {  useEffect } from "react";
+import { Analytics } from '@vercel/analytics/react';
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
 const useStyles = makeStyles((theme) => ({
@@ -249,6 +250,7 @@ const Server = () => {
             </Typography>
           </Paper>
           <DiscordLogo />
+          <Analytics />
         </div>
       )}
     </div></>
