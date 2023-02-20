@@ -38,40 +38,43 @@ const Server = () => {
   const currentDateTime = new Date().toLocaleString(); 
   const [currentTime, setCurrentTime] = useState(new Date());
   useEffect(() => {
+    
     async function fetchData() {
-      if(!router.isReady) return;
+     
+        
+      setData([]);
+      setIsLoaded(false);
+      if(router.isReady){
       const { id } = router.query;
       const response = await fetch(`https://staging.simrail.deadlykungfu.ninja/train/${id}`);
       const data = await response.json();
       const promises = [];
-      
-      data.forEach(async (station) => {
-        
-      });
-      
+  
       const intervalId = setInterval(() => {
         setCurrentTime(new Date());
       }, 1000);
       return () => clearInterval(intervalId),
+  
+      Promise.all(promises)
+        .then(() => {
+          setData(data);
+          setIsLoaded(true);
+        })
+        .catch((error) => {
+          console.error(error);
+        });
     
-
-    Promise.all(promises)
-    .then(() => {
-      setData(data);
-      setIsLoaded(true);
-      
-    })
-    .catch((error) => {
-      console.error(error);
-    });
+   }
   }
-  fetchData();
-}, []);
+    fetchData();
+  }, [router.isReady]);
 
   if (!isLoaded) {
     return <div>
       
-      Loading data... Please Wait</div>;
+      <Typography variant="h5">Loading data... Please Wait</Typography>
+      
+      </div>;
     }
 
 
