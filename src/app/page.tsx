@@ -1,5 +1,7 @@
 "use client"
 import Navbar from './Navbar';
+import Script from 'next/script'
+
 import Image from 'next/image';
 import { Inter } from '@next/font/google';
 import { SetStateAction, useEffect, useState } from 'react';
@@ -79,9 +81,23 @@ const Home = () => {
   return (
     
     <>
-    
+    <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-53SBGHDYYQ"
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-53SBGHDYYQ');
+        `}
+          </Script>
     
     <div>
+   
+
       <Navbar />
     </div><div className={classes.root}>
 
