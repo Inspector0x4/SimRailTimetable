@@ -2,12 +2,12 @@
 import Navbar from './Navbar';
 
 
-import Image from 'next/image';
+
 import { Inter } from '@next/font/google';
 import { SetStateAction, useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import DiscordLogo from "./DiscordLogo";
-import Link from 'next/link';
+
 import { Analytics } from '@vercel/analytics/react';
 import { 
   Button, 
