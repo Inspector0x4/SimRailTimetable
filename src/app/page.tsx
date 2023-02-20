@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { Inter } from '@next/font/google';
 import { SetStateAction, useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
+import DiscordLogo from "./DiscordLogo";
 import Link from 'next/link';
 import { 
   Button, 
@@ -76,7 +77,10 @@ const Home = () => {
 
   return (
     
-    <><div>
+    <>
+    
+    
+    <div>
       <Navbar />
     </div><div className={classes.root}>
 
@@ -105,7 +109,9 @@ const Home = () => {
             Thanks to the SimRail devs and SimRail France for their API !
           </Typography>
         </Paper>
+        <DiscordLogo />
       </div></>
+      
   );
 };
 

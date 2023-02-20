@@ -8,14 +8,7 @@ import Image from 'next/image'
 const Navbar = () => {
   const [currentTime, setCurrentTime] = useState(null);
 
-  useEffect(() => {
-    const fetchTime = async () => {
-      const response = await fetch('http://worldtimeapi.org/api/timezone/Europe/Paris');
-      const data = await response.json();
-      setCurrentTime(new Date(data.datetime));
-    };
-    fetchTime();
-  }, []);
+
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -36,6 +29,7 @@ const Navbar = () => {
           <Typography variant="h4" >{currentTime ? currentTime.toLocaleTimeString() : 'Loading...'}</Typography>
         </div>
         <div style={{ display: 'flex' }}> 
+        
           <div>
             <a href="https://github.com/ItsTimeooo/SimRailTimetable/" target='blank'>
               <Typography variant="h6">Github Source</Typography>
@@ -43,6 +37,7 @@ const Navbar = () => {
             <a href="https://github.com/ItsTimeooo/SimRailTimetable/issues" target='blank'>
               <Typography variant="h6">Report an issue</Typography>
             </a>
+           
           </div>
          
         </div>

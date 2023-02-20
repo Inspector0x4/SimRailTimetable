@@ -3,6 +3,7 @@ import SearchIcon from '@material-ui/icons/Search';
 import { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Navbar from '../app/Navbar';
+import DiscordLogo from "../app/DiscordLogo";
 import {
   CircularProgress,
   FormControl,
@@ -183,6 +184,7 @@ const Server = () => {
         Thanks to the SimRail devs and SimRail France for their API !
         </Typography>
       </Paper>
+      <DiscordLogo />
     </div></>
   );
 };

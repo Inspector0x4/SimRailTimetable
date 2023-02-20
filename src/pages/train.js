@@ -4,8 +4,7 @@ import Navbar from '../app/Navbar';
 import pdfMake from 'pdfmake/build/pdfmake';
 import pdfFonts from 'pdfmake/build/vfs_fonts';
 import { Grid,Button, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, makeStyles,Typography} from '@material-ui/core';
-
-
+import DiscordLogo from "../app/DiscordLogo";
 import Head from 'next/head'
 import React, {  useEffect } from "react";
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
@@ -203,6 +202,7 @@ const Server = () => {
             Thanks to the SimRail devs and SimRail France for their API !
             </Typography>
           </Paper>
+          <DiscordLogo />
         </div>
       )}
     </div></>
