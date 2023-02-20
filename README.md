@@ -12,7 +12,9 @@
 
 > If you come across any issues while using this project, feel free to open a new issue.
 
-> This repo is temporary, I plan to use docker soon
+> This repo is temporary, I plan to use docker asap
+
+
 
 ### 🏠 [Homepage](https://simrail-timetable.vercel.app)
 
