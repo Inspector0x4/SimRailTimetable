@@ -44,9 +44,11 @@ const Server = () => {
       const response = await fetch(`https://staging.simrail.deadlykungfu.ninja/train/${id}`);
       const data = await response.json();
       const promises = [];
+      
       data.forEach(async (station) => {
         
       });
+      
       const intervalId = setInterval(() => {
         setCurrentTime(new Date());
       }, 1000);
@@ -137,6 +139,23 @@ const Server = () => {
     router.push(`/${server}`);
     
   }
+  const trainTypes = data.map(station => station.train_type);
+  const uniqueTrainTypes = [...new Set(trainTypes)];
+  const trainTypeString = uniqueTrainTypes.join(', ');
+  //
+  let departure = '';
+  if (data.length > 0 && data[0].hasOwnProperty('station')) {
+    departure = data[0].station;
+  
+    
+  } else {
+    console.log('Data is empty');
+  }
+  //
+  const lastStationIndex = data.length - 1;
+  const lastStation = data[lastStationIndex];
+  const arrival = lastStation.station;
+//
 
   return (
     <><div> <Navbar /></div>
@@ -161,12 +180,20 @@ const Server = () => {
 
             <Grid container spacing={1} justifyContent="center" alignItems="center">
               <Grid item xs={8}>
-              <Typography variant="h6">If there is no data available, please check again in a few minutes.</Typography>
-               
+              <Typography variant="h6">If there is no data available, please check again in a few minutes.</Typography><br></br>
+              <Typography variant="h6"><u>Train Number</u> : <b>{id}</b></Typography>
+              <Typography variant="h6"><u>Train Type</u> : <b>{trainTypeString}</b></Typography>
+              <Typography variant="h6"><u>Train Origin</u> : <b>{departure}</b></Typography>
+              <Typography variant="h6"><u>Train Destination</u> : <b>{arrival}</b></Typography>
               </Grid>
+              
             </Grid>
           </Grid>
+          
           <Grid container spacing={1} justifyContent="center" alignItems="center">
+     
+         
+         
             <Grid item xs={8}>
               <TableContainer component={Paper} style={{ maxHeight: '650px' }}>
                 <Table stickyHeader>
