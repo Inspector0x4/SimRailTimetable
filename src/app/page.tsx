@@ -6,6 +6,7 @@ import { SetStateAction, useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import DiscordLogo from "./DiscordLogo";
 import Link from 'next/link';
+import { Analytics } from '@vercel/analytics/react';
 import { 
   Button, 
   FormControl, 
@@ -110,6 +111,7 @@ const Home = () => {
           </Typography>
         </Paper>
         <DiscordLogo />
+        <Analytics />
       </div></>
       
   );
