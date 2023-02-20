@@ -144,7 +144,7 @@ const Server = () => {
   const trainTypeString = uniqueTrainTypes.join(', ');
   //
   let departure = '';
-  if (data.length > 0 && data[0].hasOwnProperty('station')) {
+  if (data.length > 0) {
     departure = data[0].station;
   
     
@@ -152,9 +152,15 @@ const Server = () => {
     console.log('Data is empty');
   }
   //
+  let arrival = '';
   const lastStationIndex = data.length - 1;
-  const lastStation = data[lastStationIndex];
-  const arrival = lastStation.station;
+  if (data && data.length > 0) {
+    const lastStation = data[lastStationIndex];
+    arrival = lastStation.station;
+    // Autres instructions pour la dernière station
+  } else {
+   console.log("Aucune data trouvée pour l'id " + id)
+  }
 //
 
   return (
