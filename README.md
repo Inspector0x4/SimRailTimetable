@@ -1,6 +1,6 @@
 <h1 align="center">Welcome to the SimRail TimeTable project 👋</h1>
 <p>
-  <img alt="Version" src="https://img.shields.io/badge/version-V0.5-blue.svg?cacheSeconds=2592000" />
+  <img alt="Version" src="https://img.shields.io/badge/version-WIP-blue.svg?cacheSeconds=2592000" />
   <a href="https://github.com/ItsTimeooo/SimRailTimetable/blob/main/LICENSE" target="_blank">
     <img alt="License: GNU General Public License v3.0" src="https://img.shields.io/badge/License-GNU General Public License v3.0-yellow.svg" />
   </a>
