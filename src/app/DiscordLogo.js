@@ -15,7 +15,7 @@ const DiscordLogo = () => {
   const rotationClass = isHovering ? styles.rotate : "";
 
   return (
-    <a href="https://discord.gg/simrail" target='_blank'>
+    <a href="https://discord.gg/simrail" target='_blank' rel="noreferrer" >
     <img
       src="/discord-logo.svg"
       alt="Discord Logo"
