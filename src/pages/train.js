@@ -3,13 +3,14 @@ import { useState } from "react"
 import Navbar from '../app/Navbar';
 import pdfMake from 'pdfmake/build/pdfmake';
 import pdfFonts from 'pdfmake/build/vfs_fonts';
-import { Grid,Button, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, makeStyles,Typography} from '@material-ui/core';
+import { Grid,Button, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, makeStyles,Typography,CircularProgress} from '@material-ui/core';
 import DiscordLogo from "../app/DiscordLogo";
 import Head from 'next/head'
 import React, {  useEffect } from "react";
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
 const useStyles = makeStyles((theme) => ({
+
   root: {
   
   
@@ -70,8 +71,8 @@ const Server = () => {
   }, [router.isReady]);
 
   if (!isLoaded) {
-    return <div>
-      
+    return <div >
+       <CircularProgress />
       <Typography variant="h5">Loading data... Please Wait</Typography>
       
       </div>;
@@ -181,11 +182,20 @@ const Server = () => {
 
       {isLoaded && (
         <div>
-          <Grid container spacing={0} alignItems="flex-start">
-            <Button variant="contained" color="secondary" size="medium" onClick={redirectToMenu}>Come back to the train selection</Button>
-          </Grid>
-          <Grid container spacing={0} justifyContent="center" alignItems="center">
-            <Button variant="contained" color="primary" size="medium" onClick={generatePDF}>Download timetable for {id}</Button>
+       
+       <Grid container spacing={0} justifyContent="center" alignItems="center"  >
+          <Button variant="contained" color="secondary" size="medium" onClick={redirectToMenu}>Come back to the train selection</Button>
+        </Grid>
+              
+        <div style={{ height: '10px' }}></div>
+              
+        <Grid container spacing={0} justifyContent="center" alignItems="center">
+          <Button variant="contained" color="primary" size="medium" onClick={generatePDF}>Download timetable for {id}</Button>
+        </Grid>
+           
+
+
+
 
             <Grid container spacing={1} justifyContent="center" alignItems="center">
               <Grid item xs={8}>
@@ -196,7 +206,7 @@ const Server = () => {
               <Typography variant="h6"><u>Train Destination</u> : <b>{arrival}</b></Typography>
               </Grid>
               
-            </Grid>
+         
           </Grid>
           
           <Grid container spacing={1} justifyContent="center" alignItems="center">
