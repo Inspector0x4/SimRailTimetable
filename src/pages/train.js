@@ -175,7 +175,7 @@ const Server = () => {
     <div className={classes.root}>
         
       <Head><title>SimRail Timetable</title>
-      <link rel="shortcut icon" href="/logo_64.png" type="image/x-icon" />
+      <link rel="shortcut icon" href="/logo.webp" type="image/x-icon" />
       <meta content="width=device-width, initial-scale=1" name="viewport" />
       <meta name="description" content="A simple timetable for SimRail" />
       </Head>
@@ -186,9 +186,9 @@ const Server = () => {
        <Grid container spacing={0} justifyContent="center" alignItems="center"  >
           <Button variant="contained" color="secondary" size="medium" onClick={redirectToMenu}>Come back to the train selection</Button>
         </Grid>
-              
+
         <div style={{ height: '10px' }}></div>
-              
+
         <Grid container spacing={0} justifyContent="center" alignItems="center">
           <Button variant="contained" color="primary" size="medium" onClick={generatePDF}>Download timetable for {id}</Button>
         </Grid>
