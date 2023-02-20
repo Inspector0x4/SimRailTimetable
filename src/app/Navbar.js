@@ -22,7 +22,7 @@ const Navbar = () => {
       <Toolbar style={{ backgroundColor: '#1e272e' }}>
         <div style={{ flex: 1 }}>
           <Link href="/">
-          <Image src='/logo_64.png' width='48' height='48' />
+          <Image src='/logo_64.png' width='48' height='48' alt='SimRailLogo'/>
           </Link>
         </div>
         <div style={{  flex:1 ,}}>

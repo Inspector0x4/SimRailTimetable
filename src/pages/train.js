@@ -64,7 +64,7 @@ const Server = () => {
     });
   }
   fetchData();
-}, [router.isReady]);
+}, []);
 
   if (!isLoaded) {
     return <div>
