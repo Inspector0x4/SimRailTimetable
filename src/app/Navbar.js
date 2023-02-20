@@ -25,8 +25,8 @@ const Navbar = () => {
           <Image src='/logo.webp' width='48' height='48' alt='SimRailLogo'/>
           </Link>
         </div>
-        <div style={{  flex:1 ,}}>
-          <Typography variant="h4" >{currentTime ? currentTime.toLocaleTimeString() : 'Loading...'}</Typography>
+        <div style={{  flex:1 }}>
+          <Typography variant="h5" >{currentTime ? currentTime.toLocaleTimeString() : 'Loading...'}</Typography>
         </div>
         <div style={{ display: 'flex' }}> 
         

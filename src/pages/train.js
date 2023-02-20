@@ -245,7 +245,7 @@ const Server = () => {
           </Grid>
           <Paper className={classes.footer}>
             <Typography variant="body2">
-            Thanks to the SimRail devs and SimRail France for their API !
+            Thanks to the SimRail devs and SimRail France for their APIs !
             </Typography>
           </Paper>
           <DiscordLogo />
