@@ -35,7 +35,7 @@ const Navbar = () => {
               <Typography variant="h6">Github Source</Typography>
             </a>
             <a href="https://github.com/ItsTimeooo/SimRailTimetable/issues" target='blank'>
-              <Typography variant="h6">Report an issue</Typography>
+              <Typography variant="h6">Report bugs</Typography>
             </a>
            
           </div>
