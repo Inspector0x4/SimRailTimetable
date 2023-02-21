@@ -199,7 +199,7 @@ const frameHeight = "min-h-[300px] md:min-h-[400px] lg:min-h-[600px] w-full"
         <div style={{ height: '10px' }}></div>
        
         <Grid container spacing={0} justifyContent="center" alignItems="center">
-          <Button variant="contained" color="primary" size="medium">View {id} on map</Button>
+          <Button variant="contained" color="primary" size="medium" disabled>View {id} on map</Button>
         
         </Grid>
 
