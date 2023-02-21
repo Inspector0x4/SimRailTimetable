@@ -200,9 +200,7 @@ const frameHeight = "min-h-[300px] md:min-h-[400px] lg:min-h-[600px] w-full"
        
         <Grid container spacing={0} justifyContent="center" alignItems="center">
           <Button variant="contained" color="primary" size="medium">View {id} on map</Button>
-          <div className="min-h-[700px]">
-          <iframe src={`https://map.simrail.app/server/${server}?trainId=${id}`} title="Simrail FR map embedded" className={frameHeight}/>
-          </div>
+        
         </Grid>
 
 
