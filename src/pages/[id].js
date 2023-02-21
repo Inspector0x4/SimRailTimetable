@@ -146,6 +146,9 @@ const Server = () => {
         <title>SimRail Timetable</title>
       </Head>
       <Typography variant="h4" className={classes.title}>Select a train</Typography>
+      <Typography variant="body2">
+      21/02/23: Freight trains have been removed because they do not exist in the API.
+        </Typography>
       <FormControl>
       <InputLabel id="train-select-label">Train</InputLabel>
       <Select
@@ -158,8 +161,9 @@ const Server = () => {
         <MenuItem value="">
           <em>None</em>
         </MenuItem>
-        {filteredData.map((train) => (
+        {filteredData.filter(train => train.TrainNoLocal.length < 6).map((train) => (
           <MenuItem key={train.TrainNoLocal} value={train.TrainNoLocal}>
+            
             {train.TrainNoLocal}
           </MenuItem>
         ))}

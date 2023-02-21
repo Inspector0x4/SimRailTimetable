@@ -8,6 +8,7 @@ import DiscordLogo from "../app/DiscordLogo";
 import Head from 'next/head'
 import React, {  useEffect } from "react";
 import { Analytics } from '@vercel/analytics/react';
+
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
 const useStyles = makeStyles((theme) => ({
@@ -37,6 +38,7 @@ const Server = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [data, setData] = useState([]);
   const { id } = router.query;
+  const { server } = router.query;
   const currentDateTime = new Date().toLocaleString(); 
   const [currentTime, setCurrentTime] = useState(new Date());
   useEffect(() => {
@@ -167,7 +169,7 @@ const Server = () => {
    console.log("Aucune data trouvée pour l'id " + id)
   }
 //
-
+const frameHeight = "min-h-[300px] md:min-h-[400px] lg:min-h-[600px] w-full"
   return (
     <><div> <Navbar /></div>
     
@@ -193,7 +195,16 @@ const Server = () => {
         <Grid container spacing={0} justifyContent="center" alignItems="center">
           <Button variant="contained" color="primary" size="medium" onClick={generatePDF}>Download timetable for {id}</Button>
         </Grid>
-           
+
+        <div style={{ height: '10px' }}></div>
+       
+        <Grid container spacing={0} justifyContent="center" alignItems="center">
+          <Button variant="contained" color="primary" size="medium">View {id} on map</Button>
+          <div className="min-h-[700px]">
+          <iframe src={`https://map.simrail.app/server/${server}?trainId=${id}`} title="Simrail FR map embedded" className={frameHeight}/>
+          </div>
+        </Grid>
+
 
 
 
