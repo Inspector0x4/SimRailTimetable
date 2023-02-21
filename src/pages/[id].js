@@ -147,7 +147,7 @@ const Server = () => {
       </Head>
       <Typography variant="h4" className={classes.title}>Select a train</Typography>
       <Typography variant="body2">
-      21/02/23: Freight trains have been removed because they do not exist in the API.
+      21/02/23: Freight trains have been removed because they do not exist in the API. API change in progress...
         </Typography>
       <FormControl>
       <InputLabel id="train-select-label">Train</InputLabel>
