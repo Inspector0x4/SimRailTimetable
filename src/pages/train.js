@@ -3,7 +3,7 @@ import { useState } from "react"
 import Navbar from '../app/Navbar';
 import pdfMake from 'pdfmake/build/pdfmake';
 import pdfFonts from 'pdfmake/build/vfs_fonts';
-import { Grid,Button, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, makeStyles,Typography,CircularProgress} from '@material-ui/core';
+import { Grid,Button, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, makeStyles,Typography,CircularProgress,Backdrop, Box} from '@material-ui/core';
 import DiscordLogo from "../app/DiscordLogo";
 import Head from 'next/head'
 import React, {  useEffect } from "react";
@@ -36,6 +36,7 @@ const Server = () => {
   const router = useRouter();
   const classes = useStyles();
   const [isLoaded, setIsLoaded] = useState(false);
+  const [showIframe, setShowIframe] = useState(false);
   const [data, setData] = useState([]);
   const { id } = router.query;
   const { server } = router.query;
@@ -169,7 +170,14 @@ const Server = () => {
    console.log("Aucune data trouvée pour l'id " + id)
   }
 //
-const frameHeight = "min-h-[300px] md:min-h-[400px] lg:min-h-[600px] w-full"
+
+
+const showIframeButton = () => {
+  setShowIframe(true);
+};
+const handleClose = () => {
+  setShowIframe(false);
+};
   return (
     <><div> <Navbar /></div>
     
@@ -197,15 +205,36 @@ const frameHeight = "min-h-[300px] md:min-h-[400px] lg:min-h-[600px] w-full"
         </Grid>
 
         <div style={{ height: '10px' }}></div>
-       
+     
         <Grid container spacing={0} justifyContent="center" alignItems="center">
-          <Button variant="contained" color="primary" size="medium" disabled>View {id} on map</Button>
-        
+          <Button variant="contained" color="primary" size="medium"  onClick={showIframeButton}>View {id} on map</Button>
+          <Backdrop open={showIframe} onClick={handleClose} style={{ zIndex: 999 }}>
+      
+          <Box
+            position="relative"
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
+            height="100%"
+            width= "100%"
+            padding-top= "56.25%" /* 1:1 Aspect Ratio */
+            overflow="hidden"
+          >
+          
+          <iframe
+          title="SimRail.app Map iframe"
+          src={`https://map.simrail.app/server/${server}?trainId=${id}`}
+          width="700px"
+          position="absolute"
+          height="600px"
+          border="0"
+          style={{ opacity: 1 }}
+          ></iframe>
+           </Box>
+      
+      </Backdrop>
         </Grid>
-
-
-
-
+      
 
             <Grid container spacing={1} justifyContent="center" alignItems="center">
               <Grid item xs={8}>
