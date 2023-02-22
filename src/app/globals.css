@@ -105,3 +105,11 @@ a {
     color-scheme: dark;
   }
 }
+.positive {
+  color: green;
+}
+
+.negative {
+  color: red;
+}
+
