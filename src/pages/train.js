@@ -8,7 +8,7 @@ import DiscordLogo from "../app/DiscordLogo";
 import Head from 'next/head'
 import React, {  useEffect } from "react";
 import { Analytics } from '@vercel/analytics/react';
-import TrainDelayCalculator from './calcul/TrainDelay'
+
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
 const useStyles = makeStyles((theme) => ({
