@@ -8,7 +8,7 @@ import DiscordLogo from "../app/DiscordLogo";
 import Head from 'next/head'
 import React, {  useEffect } from "react";
 import { Analytics } from '@vercel/analytics/react';
-
+import TrainDelayCalculator from './calcul/TrainDelay'
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
 const useStyles = makeStyles((theme) => ({
@@ -263,6 +263,7 @@ const handleClose = () => {
                       <TableCell><b>Stop Type</b></TableCell>
                       <TableCell><b>Layover Time</b></TableCell>
                       <TableCell><b>Line</b></TableCell>
+                      <TableCell><b>Estimated arrival (wip)</b></TableCell>
                     </TableRow>
                   </TableHead>
                   <TableBody>
@@ -275,6 +276,7 @@ const handleClose = () => {
                         <TableCell>{station.stop_type}</TableCell>
                         <TableCell>{station.layover}</TableCell>
                         <TableCell>{station.line}</TableCell>
+                        <TableCell>{undefined}</TableCell>
                       </TableRow>
                     ))}
                   </TableBody>
