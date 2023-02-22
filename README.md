@@ -32,6 +32,6 @@ Give a ⭐️ if you like this timetable
 
 ## 📝 License
 
-Copyright © 2023 [Timeo](https://github.com/ItsTimeooo).<br />
+
 This project is [GNU General Public License v3.0](https://github.com/ItsTimeooo/SimRailTimetable/blob/main/LICENSE) licensed.
 
