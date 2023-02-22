@@ -24,7 +24,7 @@
 
 ## 🤝 Contributing
 
-Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/ItsTimeooo/SimRailTimetable/issues). You can also take a look at the [contributing guide](https://github.com/ItsTimeooo/SimRailTimetable/pulls).
+Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/ItsTimeooo/SimRailTimetable/issues). You can also take a look at the [contributing guide](https://github.com/ItsTimeooo/SimRailTimetable/pulls) (wip).
 
 ## Show your support
 
