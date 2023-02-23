@@ -1,3 +1,4 @@
+// URL test : http://localhost:3000/train?id=41116&server=fr1
 import { useRouter } from 'next/router';
 import { useState } from "react"
 import Navbar from '../app/Navbar';
@@ -106,8 +107,16 @@ const Server = () => {
             headerRows: 1,
             widths: ['*', '*', '*', '*', '*', '*'],
             body: [
-              ['Station Name', 'Arrival Time', 'Departure Time', 'Stop Type','Layover Time','Line'],
-              ...data.map(station => [station.station, station.scheduled_arrival_hour, station.scheduled_departure_hour, station.stop_type,station.layover,station.line])
+              ['Station Name', 'Arrival Time', 'Departure Time', 'Stop Type', 'Layover Time', 'Line'],
+              ...data.map(station => [
+                { text: `${station.station}\n\nVmax to next station :\n${station.speedLimitsToNextStation.length > 0 ? station.speedLimitsToNextStation.map(limit => limit.vMax + ' km/h').join('\n--->\n') : '/'}`},
+                station.scheduled_arrival_hour,
+                station.scheduled_departure_hour,
+                station.stop_type,
+                station.layover,
+                station.line,
+                
+              ])
             ],
             footer: {
               columns: [
@@ -127,7 +136,9 @@ const Server = () => {
           margin: [0, 0, 0, 10]
         },
         table: {  
-          margin: [0, 10, 0, 10]
+          fontSize: 10,
+          margin: [0, 10, 0, 10],
+          alignment: 'center' // Add this line
         }
       },
       footer: function() {
@@ -263,14 +274,33 @@ const handleClose = () => {
                       <TableCell><b>Stop Type</b></TableCell>
                       <TableCell><b>Layover Time</b></TableCell>
                       <TableCell><b>Line</b></TableCell>
-                      <TableCell><b>Estimated arrival (wip)</b></TableCell>
+                      <TableCell><b>Estimated arrival // Delay (wip)</b></TableCell>
                     </TableRow>
                   </TableHead>
                   <TableBody>
                     {data.map(station => (
                       <TableRow key={station.station}>
 
-                        <TableCell>{station.station}</TableCell>
+                        <TableCell>
+                          <u>{station.station}</u>
+                          
+                          {station.speedLimitsToNextStation.length > 0 ? 
+                            <div>
+                             <br></br>
+                             Vmax to next station :<br></br>
+                              {station.speedLimitsToNextStation.map((limit, index) => (
+                                <div key={index}>
+
+                                {limit.vMax} km/h
+                                  
+                                  {index < station.speedLimitsToNextStation.length - 1 && <><br></br><span>&#8595;</span></>}
+                                </div>
+                              ))}
+                            </div>
+                            
+                            : <div><br></br>Vmax to next station : <br></br>NaN</div>
+                          }
+                        </TableCell>
                         <TableCell>{station.scheduled_arrival_hour}</TableCell>
                         <TableCell>{station.scheduled_departure_hour}</TableCell>
                         <TableCell>{station.stop_type}</TableCell>
