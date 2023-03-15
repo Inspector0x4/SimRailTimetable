@@ -1,3 +1,6 @@
+<h1 align="center"> This project is no longer supported due to the end of the DFKN's API.</h1>
+
+
 <h1 align="center">Welcome to the SimRail TimeTable project 👋</h1>
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-WIP-blue.svg?cacheSeconds=2592000" />
@@ -5,6 +8,9 @@
     <img alt="License: GNU General Public License v3.0" src="https://img.shields.io/badge/License-GNU General Public License v3.0-yellow.svg" />
   </a>
 </p>
+
+
+
 
 > Welcome to the source code of the Time Table for SimRail!
 
